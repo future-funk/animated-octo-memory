@@ -1,0 +1,33 @@
+[project]
+name = "check-unicode"
+readme = "README.md"
+version = "0.0.1"
+dependencies = [
+    "pyGithub~=1.58",
+]
+
+[project.optional-dependencies]
+development = [
+    "black~=23.3",
+    "mypy==1.0.1",
+    "ruff==0.0.265",
+]
+
+[project.scripts]
+check-unicode = "check_unicode.non_ascii:main"
+
+[tool.mypy]
+exclude = "^build/"
+
+[tool.ruff]
+line-length = 120
+select = [
+    "C90",
+    "E",
+    "ERA",
+    "F",
+    "I",
+    "PGH",
+    "PL",
+    "RUF",
+]
